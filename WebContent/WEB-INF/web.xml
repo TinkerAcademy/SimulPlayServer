@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SimulPlay</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>NextTurnServlet</display-name>
+    <servlet-name>NextTurnServlet</servlet-name>
+    <servlet-class>com.tinkeracademy.NextTurnServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NextTurnServlet</servlet-name>
+    <url-pattern>/nextturn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddScoreServlet</display-name>
+    <servlet-name>AddScoreServlet</servlet-name>
+    <servlet-class>com.tinkeracademy.AddScoreServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddScoreServlet</servlet-name>
+    <url-pattern>/addscore</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResetScore</display-name>
+    <servlet-name>ResetScore</servlet-name>
+    <servlet-class>com.tinkeracademy.ResetScore</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResetScore</servlet-name>
+    <url-pattern>/resetscore</url-pattern>
+  </servlet-mapping>
+</web-app>
