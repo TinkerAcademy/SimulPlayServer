@@ -27,18 +27,22 @@ public class AddScoreServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("AddScoreServlet enter");
 		SimulPlay play = SimulPlay.getInstance();
 		play.setScore(play.getScore() + 100);
 		int score = play.getScore();
+		System.out.println("AddScoreServlet score="+score);
 		String responseStr = new JSONStringer()
 	     .object()
 	         .key("score")
 	         .value(score)
 	     .endObject()
 	     .toString();
+		System.out.println("AddScoreServlet responseStr="+responseStr);
 		response.setContentType("text/plain");
 		response.getWriter().write(responseStr);
 		response.getWriter().flush();
+		System.out.println("AddScoreServlet exit");
 	}
 
 }

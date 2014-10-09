@@ -27,11 +27,15 @@ public class NextTurnServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("NextTurnServlet enter");
 		String uid = request.getParameter("user_uid");
+		System.out.println("NextTurnServlet user_uid="+uid);
 		SimulPlay play = SimulPlay.getInstance();
 		play.registerUserId(uid);
 		String nextUid = play.nextUserId();
+		System.out.println("NextTurnServlet nextUid="+nextUid);
 		int score = play.getScore();
+		System.out.println("NextTurnServlet score="+score);
 		String responseStr = new JSONStringer()
 	     .object()
 	         .key("user_uid")
@@ -40,9 +44,11 @@ public class NextTurnServlet extends HttpServlet {
 	         .value(score)
 	     .endObject()
 	     .toString();
+		System.out.println("NextTurnServlet responseStr="+responseStr);
 		response.setContentType("text/plain");
 		response.getWriter().write(responseStr);
 		response.getWriter().flush();
+		System.out.println("NextTurnServlet exit");
 	}
 
 }

@@ -27,9 +27,11 @@ public class ResetScore extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("ResetScore enter");
 		SimulPlay play = SimulPlay.getInstance();
 		play.setScore(0);	
 		int score = play.getScore();
+		System.out.println("ResetScore score="+score);
 		String responseStr = new JSONStringer()
 	     .object()
 	         .key("score")
@@ -39,6 +41,7 @@ public class ResetScore extends HttpServlet {
 		response.setContentType("text/plain");
 		response.getWriter().write(responseStr);
 		response.getWriter().flush();	
+		System.out.println("ResetScore exit");
 	}
 
 }
